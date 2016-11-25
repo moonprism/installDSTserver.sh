@@ -58,7 +58,8 @@ echo "请输入服务器描述( Server Description )："
 read ser_desc
 echo "请输入服务器密码( Server Password )："
 read ser_passwd
-
+echo '请输入需要的 modid（ 各id间使用,分隔 eg. 374550642,378160973,375850593,458587300,375859599 ） :'
+read modid_list
 case $mode_s in
     1 )
         cat > $master_start <<EOF
@@ -202,8 +203,6 @@ case $mode_s in
         echo ' return {' > $dontstarve_dir/$cluster_name/Caves/modoverrides.lua
         ;;    
 esac
-echo '请输入需要的 modid（ 各id间使用,分隔 eg. 374550642,378160973,375850593,458587300,375859599 ） :'
-read modid_list
 if [[ $modid_list != '' ]]; then
     IFS=',' mod_list=($modid_list)
     for mod_id in ${mod_list[@]}; do
