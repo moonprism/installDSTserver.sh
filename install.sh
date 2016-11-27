@@ -21,13 +21,6 @@ dontstarve_dir="$HOME/.klei/DoNotStarveTogether"
 caves_start="$HOME/caves_start.sh"
 master_start="$HOME/master_start.sh"
 
-mkdir "$steamcmd_dir"
-cd "$steamcmd_dir"
-if [ ! -f steamcmd_linux.tar.gz ]
-then
-    wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
-    tar -xvzf steamcmd_linux.tar.gz
-fi
 mkdir -p $dontstarve_dir/$cluster_name/Master
 mkdir -p $dontstarve_dir/$cluster_name/Caves
 
@@ -153,6 +146,15 @@ return {
 EOF
         ;;
 esac
+
+#安装steamcmd
+mkdir "$steamcmd_dir"
+cd "$steamcmd_dir"
+if [ ! -f steamcmd_linux.tar.gz ]
+then
+    wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+    tar -xvzf steamcmd_linux.tar.gz
+fi
 
 cat > $dontstarve_dir/$cluster_name/cluster.ini <<EOF
 [GAMEPLAY]
