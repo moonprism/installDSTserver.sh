@@ -9,7 +9,7 @@
 ```shell
 wget https://raw.githubusercontent.com/moonprism/installDSTserver.sh/master/install.sh
 chmod +x install.sh 
-./install
+./install.sh
 ```
 `$ 请输入安装模式（ install mode 1 / 2 / 3 ）`
 
